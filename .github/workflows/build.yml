@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Build for Windows (.exe) 🚀
-        run: npm run build-win
+        run: npm run build:win
 
       - name: Upload .exe
         uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
         run: npm ci
 
       - name: Build for macOS (.app / .dmg) 🚀
-        run: npm run build-mac
+        run: npm run build:mac
 
       - name: Upload .app 🚀
         uses: actions/upload-artifact@v4
