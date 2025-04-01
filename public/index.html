@@ -298,7 +298,7 @@
 
     #buyMeCoffeeBtn {
       position: absolute;
-      bottom: 10px;
+      bottom: 65px;
       left: 50%;
       transform: translateX(-50%);
       background-color: #0070ba;
@@ -311,6 +311,18 @@
       font-size: 14px;
       width: 210px !important;
       transition: background 0.3s;
+    }
+
+    #footerCredits {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #footerCredits a {
+      color: #f44336;
+      text-decoration: none;
     }
 
     #buyMeCoffeeBtn:hover {
@@ -522,6 +534,7 @@
         
       </div>
         <button id="buyMeCoffeeBtn" onclick="buyCoffee()">☕ Buy me a Coffee</button>
+        <p id="footerCredits">Made with ❤️ by <a href="https://github.com/nhockool1002" target="_blank">NhutNguyen</a> - 1.0.0</p>
     </div>
   </div>
   <div class="column" id="columnC">
@@ -574,7 +587,7 @@
     });
 
     function buyCoffee() {
-      window.open("https://www.paypal.com/paypalme/nhutnguyenminhit", "_blank");
+      window.open("https://www.paypal.com/paypalme/nhutnguyenminh2612", "_blank");
     }
 
     function beautifyJSON(input) {
