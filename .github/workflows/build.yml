@@ -1,4 +1,4 @@
-name: Build Electron App
+name: Build AllUtilityTool 🚀🚀🚀
 
 on:
   push:
@@ -8,32 +8,39 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    
     strategy:
       matrix:
         os: [windows-latest, macos-latest]
         node-version: [18.x]
 
+    runs-on: ${{ matrix.os }}
+
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout source 🚀
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js ${{ matrix.node-version }} 🚀
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name: Install dependencies
+
+    - name: Install dependencies 🚀
       run: npm ci
-      
-    - name: Build Electron app
-      run: npm run build
-      
-    - name: Upload artifacts
+
+    - name: Build AllUtilityTool app 🚀
+      run: |
+        if [ "$RUNNER_OS" == "Windows" ]; then
+          npm run build-win
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          npm run build-mac
+        fi
+      shell: bash
+
+    - name: Build AllUtilityTool app 🚀
+    - name: Upload artifacts 
       uses: actions/upload-artifact@v4
       with:
         name: electron-app-${{ matrix.os }}
         path: |
           dist/
-          release/ 
