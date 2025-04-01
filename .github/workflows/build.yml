@@ -1,4 +1,4 @@
-name: Build AllUtilityTool 🚀🚀🚀
+name: Build Electron App
 
 on:
   push:
@@ -7,40 +7,48 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        os: [windows-latest, macos-latest]
-        node-version: [18.x]
-
-    runs-on: ${{ matrix.os }}
-
+  build-windows:
+    runs-on: windows-latest
     steps:
-    - name: Checkout source 🚀
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Setup Node.js ${{ matrix.node-version }} 🚀
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+      - name: Setup Node.js 🚀
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
 
-    - name: Install dependencies 🚀
-      run: npm ci
+      - name: Install dependencies🚀
+        run: npm ci
 
-    - name: Build AllUtilityTool app 🚀
-      run: |
-        if [ "$RUNNER_OS" == "Windows" ]; then
-          npm run build-win
-        elif [ "$RUNNER_OS" == "macOS" ]; then
-          npm run build-mac
-        fi
-      shell: bash
+      - name: Build for Windows (.exe) 🚀
+        run: npm run build-win
 
-    - name: Build AllUtilityTool app 🚀
-    - name: Upload artifacts 
-      uses: actions/upload-artifact@v4
-      with:
-        name: electron-app-${{ matrix.os }}
-        path: |
-          dist/
+      - name: Upload .exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-app-windows 🚀
+          path: dist/
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+
+      - name: Install dependencies 🚀
+        run: npm ci
+
+      - name: Build for macOS (.app / .dmg) 🚀
+        run: npm run build-mac
+
+      - name: Upload .app 🚀
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-app-macos 🚀
+          path: dist/
