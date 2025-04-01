@@ -1,0 +1,26 @@
+{
+  "name": "all-in-one-developer-tool",
+  "version": "1.0.0",
+  "description": "All-in-One Developer Tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --mac --win",
+    "build:mac": "electron-builder build --mac",
+    "build:win": "electron-builder build --win"
+  },
+  "devDependencies": {
+    "electron": "^27.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.developer.tool",
+    "productName": "All-in-One Developer Tool",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

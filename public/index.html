@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Best All-in-One JSON, XML, SQL & Security Tools Online | Free Developer Utilities</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online All-in-One Toolset for JSON, XML, SQL, and Security – Beautify, Minify, Validate, Encrypt, Encode, Convert & More!">
+  <meta name="keywords" content="JSON Tools, XML Tools, SQL Formatter, Hash Generator, Base64 Encode Decode, AES Encrypt Decrypt, JWT Tools, Online Developer Utilities">
+  <meta name="author" content="Cuong Dev">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Best All-in-One JSON, XML, SQL & Security Tools Online">
+  <meta property="og:description" content="Free online tools to beautify, minify, validate, and encrypt your data with ease.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com">
+  <meta property="og:image" content="https://your-domain.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Online Dev Tools – JSON, XML, SQL, Security">
+  <meta name="twitter:description" content="Use our all-in-one dev toolkit for JSON/XML formatting, SQL validation, encryption & encoding tools.">
+  <meta name="twitter:image" content="https://your-domain.com/twitter-image.png">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      font-family: "Exo 2", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .column {
+      padding: 10px;
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    #columnA {
+      width: 40%;
+      background-color: #1e1e1e;
+    }
+
+    #columnB {
+      width: 20%;
+      background-color: #2b2b2b;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    #columnB button {
+      width: 45%;
+      margin: 5px;
+    }
+
+    #columnC {
+      width: 40%;
+      background-color: #1e1e1e;
+    }
+
+    .editor {
+      width: 100%;
+      height: 45%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    /* From Uiverse.io by Randdose */
+    .button {
+      all: unset;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0.6em 2em;
+      border: mediumspringgreen solid 0.15em;
+      border-radius: 0.25em;
+      color: mediumspringgreen;
+      font-size: 1.5em;
+      font-weight: 600;
+      cursor: pointer;
+      overflow: hidden;
+      transition: border 300ms, color 300ms;
+      user-select: none;
+    }
+
+    .button p {
+      z-index: 1;
+    }
+
+    .button:hover {
+      color: #212121;
+    }
+
+    .button:active {
+      border-color: teal;
+    }
+
+    .button::after,
+    .button::before {
+      content: "";
+      position: absolute;
+      width: 9em;
+      aspect-ratio: 1;
+      background: mediumspringgreen;
+      opacity: 50%;
+      border-radius: 50%;
+      transition: transform 500ms, background 300ms;
+    }
+
+    .button::before {
+      left: 0;
+      transform: translateX(-8em);
+    }
+
+    .button::after {
+      right: 0;
+      transform: translateX(8em);
+    }
+
+    .button:hover:before {
+      transform: translateX(-1em);
+    }
+
+    .button:hover:after {
+      transform: translateX(1em);
+    }
+
+    .button:active:before,
+    .button:active:after {
+      background: teal;
+    }
+
+
+
+    /* Final Grouped Style Buttons */
+    .button {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 0.4em 1.2em;
+      min-width: 120px;
+      height: 40px;
+      border-radius: 0.25em;
+      font-size: 0.9em;
+      font-weight: 500;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 300ms;
+      user-select: none;
+      white-space: nowrap;
+      margin: 5px;
+    }
+
+    .button p {
+      z-index: 1;
+      margin: 0;
+    }
+
+
+    #columnB {
+      width: 20%;
+      background-color: #2b2b2b;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+
+
+    #columnB .button {
+      width: 42%;
+      margin: 4px 0;
+      height: 32px;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 0.2em 0.6em;
+    }
+
+
+    /* Per group theme color */
+    .button.sql {
+      border: 2px solid #ff5722;
+      color: #ff5722;
+      --group-color: #ff5722;
+    }
+
+    .button.json {
+      border: 2px solid #00bcd4;
+      color: #00bcd4;
+      --group-color: #00bcd4;
+    }
+
+    .button.convert {
+      border: 2px solid #4caf50;
+      color: #4caf50;
+      --group-color: #4caf50;
+    }
+
+    .button.hash {
+      border: 2px solid #9c27b0;
+      color: #9c27b0;
+      --group-color: #9c27b0;
+    }
+
+    .button.validate {
+      border: 2px solid #607d8b;
+      color: #607d8b;
+      --group-color: #607d8b;
+    }
+
+    .button.utility {
+      border: 2px solid #ff9800;
+      color: #ff9800;
+      --group-color: #ff9800;
+    }
+
+    .button.secure {
+      border: 2px solid #f44336;
+      color: #f44336;
+      --group-color: #f44336;
+    }
+
+    .button:hover {
+      background: var(--group-color);
+      color: #fff;
+    }
+
+    .button:active {
+      border-color: #222;
+    }
+
+    .button::after,
+    .button::before {
+      content: "";
+      position: absolute;
+      width: 9em;
+      aspect-ratio: 1;
+      background: var(--group-color, mediumspringgreen);
+      opacity: 50%;
+      border-radius: 50%;
+      transition: transform 500ms, background 300ms;
+    }
+
+    .button::before {
+      left: 0;
+      transform: translateX(-8em);
+    }
+
+    .button::after {
+      right: 0;
+      transform: translateX(8em);
+    }
+
+    .button:hover:before {
+      transform: translateX(-1em);
+    }
+
+    .button:hover:after {
+      transform: translateX(1em);
+    }
+
+    .button:active:before,
+    .button:active:after {
+      background: #222;
+    }
+
+
+    /* Gradient scrollbar for columnB */
+    #columnB::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #columnB::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #ff5722, #607d8b);
+      border-radius: 4px;
+    }
+
+    #columnB::-webkit-scrollbar-track {
+      background: #1e1e1e;
+    }
+
+    #buyMeCoffeeBtn {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #0070ba;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+      width: 210px !important;
+      transition: background 0.3s;
+    }
+
+    #buyMeCoffeeBtn:hover {
+      background-color: #003087;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="column" id="columnA">
+    <div style="color:white; margin-bottom: 5px;">
+      <label for="langInput1">Input 1:</label>
+      <select id="langInput1" onchange="setEditorMode(input1, this.value)">
+        <option value="auto">Auto</option>
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+        <option value="javascript">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="text">Text</option>
+        <option value="css">CSS</option>
+        <option value="markdown">Markdown</option>
+        <option value="sql">SQL</option>
+      </select>
+    </div>
+    <div class="editor" id="inputText1"></div>
+    <div style="color:white; margin-bottom: 5px;">
+      <label for="langInput2">Input 2:</label>
+      <select id="langInput2" onchange="setEditorMode(input2, this.value)">
+        <option value="auto">Auto</option>
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+        <option value="javascript">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="text">Text</option>
+        <option value="css">CSS</option>
+        <option value="markdown">Markdown</option>
+        <option value="sql">SQL</option>
+      </select>
+    </div>
+    <div class="editor" id="inputText2"></div>
+  </div>
+  <div class="column" id="columnB">
+    <div class="accordion" id="accordionTools" style="width: 100%;">
+      <div class="card" style="background:#2d2d2d;border:none;">
+        <div class="card-header" id="heading-0" style="padding:0; width:100%;">
+          <h2 class="mb-0"><button aria-controls="collapse-0" aria-expanded="true"
+              class="btn btn-link btn-block text-left" data-target="#collapse-0" data-toggle="collapse"
+              style="color:white;text-decoration:none;background:#3a3a3a;width:98%;" type="button">📄 Json
+              Tools</button></h2>
+        </div>
+        <div aria-labelledby="heading-0" class="collapse show" data-parent="#accordionTools" id="collapse-0">
+          <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 4px;"><button class="button json"
+              id="btnBeautifyJSON">
+              <p>Beautify JSON</p>
+            </button><button class="button json" id="btnMinifyJSON">
+              <p>Minify JSON</p>
+            </button><button class="button json" id="btnValidateJSON">
+              <p>Validate JSON</p>
+            </button><button class="button json" id="btnJsonToXml">
+              <p>JSON to XML</p>
+            </button><button class="button json" id="btnFixArrayJSON">
+              <p>Fix Array JSON</p>
+            </button><button class="button json" id="btnJsonToCsv">
+              <p>JSON to CSV</p>
+            </button><button class="button json" id="btnGenerateDummyJSON">
+              <p>Dummy JSON</p>
+            </button></div>
+        </div>
+      </div>
+      <div class="card" style="background:#2d2d2d;border:none;">
+        <div class="card-header" id="heading-1" style="padding:0; width:100%;">
+          <h2 class="mb-0"><button aria-controls="collapse-1" aria-expanded="false"
+              class="btn btn-link btn-block text-left" data-target="#collapse-1" data-toggle="collapse"
+              style="color:white;text-decoration:none;background:#3a3a3a;width:98%;" type="button">🧾 Xml
+              Tools</button></h2>
+        </div>
+        <div aria-labelledby="heading-1" class="collapse" data-parent="#accordionTools" id="collapse-1">
+          <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 4px;"><button class="button convert"
+              id="btnBeautifyXML">
+              <p>Beautify XML</p>
+            </button><button class="button convert" id="btnMinifyXML">
+              <p>Minify XML</p>
+            </button><button class="button convert" id="btnValidateXML">
+              <p>Validate XML</p>
+            </button><button class="button convert" id="btnXmlToJson">
+              <p>XML to JSON</p>
+            </button><button class="button convert" id="btnGenerateDummyXML">
+              <p>Dummy XML</p>
+            </button></div>
+        </div>
+      </div>
+      <div class="card" style="background:#2d2d2d;border:none;">
+        <div class="card-header" id="heading-2" style="padding:0; width:100%;">
+          <h2 class="mb-0"><button aria-controls="collapse-2" aria-expanded="false"
+              class="btn btn-link btn-block text-left" data-target="#collapse-2" data-toggle="collapse"
+              style="color:white;text-decoration:none;background:#3a3a3a;width:98%;" type="button">🛠 Sql
+              Tools</button></h2>
+        </div>
+        <div aria-labelledby="heading-2" class="collapse" data-parent="#accordionTools" id="collapse-2">
+          <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 4px;"><button class="button sql"
+              id="btnBeautifySQL">
+              <p>Beautify SQL</p>
+            </button><button class="button sql" id="btnMinifySQL">
+              <p>Minify SQL</p>
+            </button><button class="button sql" id="btnValidateSQL">
+              <p>Validate SQL</p>
+            </button><button class="button sql" id="btnEscapeSQL">
+              <p>Escape SQL</p>
+            </button><button class="button sql" id="btnSplitSQL">
+              <p>Split SQL</p>
+            </button></div>
+        </div>
+      </div>
+      <div class="card" style="background:#2d2d2d;border:none;">
+        <div class="card-header" id="heading-3" style="padding:0; width:100%;">
+          <h2 class="mb-0"><button aria-controls="collapse-3" aria-expanded="false"
+              class="btn btn-link btn-block text-left" data-target="#collapse-3" data-toggle="collapse"
+              style="color:white;text-decoration:none;background:#3a3a3a;width:98%;" type="button">🔐 Security
+              Tools</button></h2>
+        </div>
+        <div aria-labelledby="heading-3" class="collapse" data-parent="#accordionTools" id="collapse-3">
+          <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 4px;"><button class="button secure"
+              id="btnMd5">
+              <p>MD5 Hash</p>
+            </button><button class="button secure" id="btnSha">
+              <p>SHA256 Hash</p>
+            </button><button class="button secure" id="btnBase64Encode">
+              <p>Base64 Encode</p>
+            </button><button class="button secure" id="btnBase64Decode">
+              <p>Base64 Decode</p>
+            </button><button class="button secure" id="btnAesEncrypt">
+              <p>AES Encrypt</p>
+            </button><button class="button secure" id="btnAesDecrypt">
+              <p>AES Decrypt</p>
+            </button><button class="button secure" id="btnJwtEncode">
+              <p>JWT Encode</p>
+            </button><button class="button secure" id="btnJwtDecode">
+              <p>JWT Decode</p>
+            </button>
+            <button class="button secure" id="btnTextToHex">
+              <p>Text To Hex</p>
+            </button>
+            <button class="button secure" id="btnHexToText">
+              <p>Hex to Text</p>
+            </button>
+            <button class="button secure" id="btnHexToAscii">
+              <p>Hex to Ascii</p>
+            </button>
+            <button class="button secure" id="btnAsciiToHex">
+              <p>Ascii to Hex</p>
+            </button>
+            <button class="button secure" id="btnHexToBinary">
+              <p>Hex to Binary</p>
+            </button>
+            <button class="button secure" id="btnBinaryToHex">
+              <p>Binary to Hex</p>
+            </button>
+            <button class="button secure" id="btnHexToDecimal">
+              <p>Hex to Decimal</p>
+            </button>
+            <button class="button secure" id="btnDecimalToHex">
+              <p>Decimal to Hex</p>
+            </button>
+            <button class="button secure" id="btnHexToHexaDecimal">
+              <p>Hex to Hexa Decimal</p>
+            </button>
+            <button class="button secure" id="btnHexaDecimalToHex">
+              <p>Hexa Decimal to Hex</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="background:#2d2d2d;border:none;">
+        <div class="card-header" id="heading-4" style="padding:0; width:100%;">
+          <h2 class="mb-0"><button aria-controls="collapse-4" aria-expanded="false"
+              class="btn btn-link btn-block text-left" data-target="#collapse-4" data-toggle="collapse"
+              style="color:white;text-decoration:none;background:#3a3a3a;width:98%;" type="button">🧪 Utility
+              Tools</button></h2>
+        </div>
+        <div aria-labelledby="heading-4" class="collapse" data-parent="#accordionTools" id="collapse-4">
+          <div class="card-body" style="display: flex; flex-wrap: wrap; gap: 4px;"><button class="button utility"
+              id="btnHighlightJsonKeys">
+              <p>Highlight Keys</p>
+            </button><button class="button utility" id="btnCountJsonKeys">
+              <p>Count Keys</p>
+            </button><button class="button utility" id="btnStringCompare">
+              <p>String Compare</p>
+            </button><button class="button utility" id="btnUuidGen">
+              <p>Generate UUID</p>
+            </button><button class="button utility" id="btnCountChars">
+              <p>Count Chars/Words</p>
+            </button><button class="button utility" id="btnTextToQR">
+              <p>Text to QR</p>
+            </button>
+            <button class="button utility" id="btnUpperCase">
+              <p>Upper Case</p>
+            </button>
+            <button class="button utility" id="btnLowerCase">
+              <p>Lower Case</p>
+            </button>
+            <button class="button utility" id="btnCapitalizedCase">
+              <p>Capitalized Case</p>
+            </button>
+            <button class="button utility" id="btnSentenceCase">
+              <p>Sentence Case</p>
+            </button>
+          </div>
+        </div>
+        
+      </div>
+        <button id="buyMeCoffeeBtn" onclick="buyCoffee()">☕ Buy me a Coffee</button>
+    </div>
+  </div>
+  <div class="column" id="columnC">
+    <div style="color:white; margin-bottom: 5px;">
+      <label for="langOutput">Output:</label>
+      <select id="langOutput" onchange="setEditorMode(output, this.value)">
+        <option value="auto">Auto</option>
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+        <option value="javascript">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="text">Text</option>
+        <option value="css">CSS</option>
+        <option value="markdown">Markdown</option>
+        <option value="sql">SQL</option>
+      </select>
+    </div>
+    <div class="editor" id="outputText"></div>
+    <div style="width: 100%; display: flex; gap: 4px;">
+      <button class="button utility" id="btnCopy">
+        <p>Copy Output</p>
+      </button>
+      <button class="button utility" id="btnRemove">
+        <p>Remove All</p>
+      </button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sql-formatter@12.2.2/dist/sql-formatter.min.js"></script>
+  <script>
+
+    function setEditorMode(editor, mode) {
+      if (mode === "auto") return;
+      editor.session.setMode("ace/mode/" + mode);
+    }
+
+
+    const input1 = ace.edit("inputText1", {
+      theme: "ace/theme/monokai", mode: "ace/mode/json", fontSize: "14px"
+    });
+    const input2 = ace.edit("inputText2", {
+      theme: "ace/theme/monokai", mode: "ace/mode/json", fontSize: "14px"
+    });
+    const output = ace.edit("outputText", {
+      theme: "ace/theme/monokai", mode: "ace/mode/json", readOnly: true, fontSize: "14px"
+    });
+
+    function buyCoffee() {
+      window.open("https://www.paypal.com/paypalme/nhutnguyenminhit", "_blank");
+    }
+
+    function beautifyJSON(input) {
+      try { return JSON.stringify(JSON.parse(input), null, 2); }
+      catch (e) { return 'Invalid JSON!'; }
+    }
+
+    function beautifyXML(input) {
+      try {
+        const reg = /(>)(<)(\/*)/g;
+        let xml = input.replace(reg, '$1\r\n$2$3');
+        let pad = 0;
+        return xml.split('\r\n').map((node) => {
+          let indent = 0;
+          if (node.match(/.+<\/\w[^>]*>$/)) indent = 0;
+          else if (node.match(/^<\/\w/)) { if (pad !== 0) pad -= 1; }
+          else if (node.match(/^<\w[^>]*[^\/]>.*$/)) indent = 1;
+          const padding = '  '.repeat(pad);
+          pad += indent;
+          return padding + node;
+        }).join('\r\n');
+      } catch (e) { return 'Invalid XML!'; }
+    }
+
+    $('#btnBeautifyJSON').click(() => {
+      output.setValue(beautifyJSON(input1.getValue()), -1);
+      output.session.setMode("ace/mode/json");
+    });
+
+    $('#btnBeautifyXML').click(() => {
+      output.setValue(beautifyXML(input1.getValue()), -1);
+      output.session.setMode("ace/mode/xml");
+    });
+
+    $('#btnJsonToXml').click(() => {
+      try {
+        const x2js = new X2JS();
+        output.setValue(x2js.json2xml_str(JSON.parse(input1.getValue())), -1);
+        output.session.setMode("ace/mode/xml");
+      } catch { output.setValue("Invalid JSON!", -1); }
+    });
+
+    $('#btnXmlToJson').click(() => {
+      try {
+        const x2js = new X2JS();
+        output.setValue(JSON.stringify(x2js.xml_str2json(input1.getValue()), null, 2), -1);
+        output.session.setMode("ace/mode/json");
+      } catch { output.setValue("Invalid XML!", -1); }
+    });
+
+    $('#btnMd5').click(() => {
+      output.setValue(CryptoJS.MD5(input1.getValue()).toString(), -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnSha').click(() => {
+      output.setValue(CryptoJS.SHA256(input1.getValue()).toString(), -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnBase64Encode').click(() => {
+      output.setValue(btoa(unescape(encodeURIComponent(input1.getValue()))), -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnBase64Decode').click(() => {
+      try {
+        output.setValue(decodeURIComponent(escape(atob(input1.getValue()))), -1);
+      } catch { output.setValue("Invalid Base64 string!", -1); }
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnMinifyJSON').click(() => {
+      try {
+        output.setValue(JSON.stringify(JSON.parse(input1.getValue())), -1);
+        output.session.setMode("ace/mode/json");
+      } catch { output.setValue("Invalid JSON!", -1); }
+    });
+
+    $('#btnMinifyXML').click(() => {
+      output.setValue(input1.getValue().replace(/\s{2,}|\n/g, ''), -1);
+      output.session.setMode("ace/mode/xml");
+    });
+
+    $('#btnValidateJSON').click(() => {
+      try { JSON.parse(input1.getValue()); output.setValue("Valid JSON ✅", -1); }
+      catch { output.setValue("Invalid JSON ❌", -1); }
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnValidateXML').click(() => {
+      try {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(input1.getValue(), "text/xml");
+        const isValid = !xmlDoc.querySelector("parsererror");
+        output.setValue(isValid ? "Valid XML ✅" : "Invalid XML ❌", -1);
+      } catch {
+        output.setValue("Invalid XML ❌", -1);
+      }
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnAesEncrypt').click(() => {
+      const key = prompt("Enter AES key for encryption:");
+      if (!key) return alert("Key is required.");
+      const encrypted = CryptoJS.AES.encrypt(input1.getValue(), key).toString();
+      output.setValue(encrypted, -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnAesDecrypt').click(() => {
+      const key = prompt("Enter AES key for decryption:");
+      if (!key) return alert("Key is required.");
+      try {
+        const decrypted = CryptoJS.AES.decrypt(input1.getValue(), key).toString(CryptoJS.enc.Utf8);
+        output.setValue(decrypted || "Invalid AES Key or Cipher", -1);
+      } catch {
+        output.setValue("Decryption failed", -1);
+      }
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnGenerateDummyJSON').click(() => {
+      output.setValue(JSON.stringify({ id: 1, name: "John Doe", status: "active" }, null, 2), -1);
+      output.session.setMode("ace/mode/json");
+    });
+
+    $('#btnGenerateDummyXML').click(() => {
+      output.setValue("<user><id>1</id><name>John Doe</name><status>active</status></user>", -1);
+      output.session.setMode("ace/mode/xml");
+    });
+
+
+
+
+
+    $('#btnJsonDiff').click(() => {
+      try {
+        const obj1 = JSON.stringify(JSON.parse(input1.getValue()), null, 2);
+        const obj2 = JSON.stringify(JSON.parse(input2.getValue()), null, 2);
+        output.setValue(obj1 === obj2 ? "Same JSON" : "Different JSON", -1);
+      } catch { output.setValue("Invalid JSON!", -1); }
+    });
+
+    $('#btnStringDiff').click(() => {
+      output.setValue(input1.getValue() === input2.getValue() ? "Same content" : "Different content", -1);
+    });
+
+    $('#btnJwtDecode').click(() => {
+      try {
+        const parts = input1.getValue().split('.');
+        const decoded = parts.map(p => JSON.stringify(JSON.parse(atob(p)), null, 2));
+        output.setValue("Header:\n" + decoded[0] + "\n\nPayload:\n" + decoded[1], -1);
+      } catch { output.setValue("Invalid JWT!", -1); }
+      output.session.setMode("ace/mode/json");
+    });
+
+    $('#btnJsonToCsv').click(() => {
+      try {
+        const arr = JSON.parse(input1.getValue());
+        if (!Array.isArray(arr)) throw "Not an array";
+        const header = Object.keys(arr[0]).join(",");
+        const rows = arr.map(obj => Object.values(obj).join(",")).join("\n");
+        output.setValue(header + "\n" + rows, -1);
+        output.session.setMode("ace/mode/text");
+      } catch { output.setValue("Invalid JSON array!", -1); }
+    });
+
+    $('#btnHighlightJsonKeys').click(() => {
+      try {
+        const json = JSON.parse(input1.getValue());
+        const highlighted = JSON.stringify(json, (k, v) => v, 2).replace(/"(\w+)":/g, '"**$1**":');
+        output.setValue(highlighted, -1);
+      } catch { output.setValue("Invalid JSON!", -1); }
+    });
+
+    $('#btnCountJsonKeys').click(() => {
+      try {
+        const json = JSON.parse(input1.getValue());
+        const count = Object.keys(json).length;
+        output.setValue("Total keys: " + count, -1);
+      } catch { output.setValue("Invalid JSON!", -1); }
+    });
+
+    $('#btnStringCompare').click(() => {
+      const str1 = input1.getValue().trim();
+      const str2 = input2.getValue().trim();
+      if (str1 === str2) {
+        output.setValue("✅ The strings are identical.", -1);
+      } else {
+        let result1 = "", result2 = "";
+        const maxLength = Math.max(str1.length, str2.length);
+        for (let i = 0; i < maxLength; i++) {
+          const ch1 = str1[i] || " ";
+          const ch2 = str2[i] || " ";
+          result1 += ch1 === ch2 ? ch1 : `⛔(${ch1})`;
+          result2 += ch1 === ch2 ? ch2 : `⛔(${ch2})`;
+        }
+        const message = `❌ Strings are different.
+
+A: ${result1}
+
+B: ${result2}`;
+        output.setValue(message, -1);
+      }
+    });
+
+
+    $('#btnUuidGen').click(() => {
+      const uuid = URL.createObjectURL(new Blob([])).split('/').pop();
+      output.setValue(uuid, -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnCountChars').click(() => {
+      const text = input1.getValue();
+      const charCount = text.length;
+      const wordCount = text.trim().split(/\s+/).filter(Boolean).length;
+      const lineCount = text.split(/\r?\n/).length;
+      output.setValue(`📏 Characters: ${charCount}\n📝 Words: ${wordCount}\n📄 Lines: ${lineCount}`, -1);
+      output.session.setMode("ace/mode/text");
+    });
+
+
+    $('#btnJwtEncode').click(() => {
+      try {
+        const payload = JSON.parse(input1.getValue());
+        const header = { alg: "HS256", typ: "JWT" };
+        const secret = prompt("Enter secret key for JWT encoding:");
+        if (!secret) return alert("Secret key is required.");
+
+        const base64url = str => btoa(JSON.stringify(str))
+          .replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+
+        const encodeUtf8 = s => unescape(encodeURIComponent(s));
+        const header64 = base64url(header);
+        const payload64 = base64url(payload);
+        const data = header64 + "." + payload64;
+        const signature = CryptoJS.HmacSHA256(encodeUtf8(data), encodeUtf8(secret)).toString(CryptoJS.enc.Base64)
+          .replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+
+        const jwt = data + "." + signature;
+        output.setValue(jwt, -1);
+        output.session.setMode("ace/mode/text");
+      } catch {
+        output.setValue("Invalid payload!", -1);
+      }
+    });
+
+    $('#btnJwtDecode').click(() => {
+      try {
+        const jwt = input1.getValue().trim();
+        const secret = prompt("Enter secret key for verification (or leave empty to skip):");
+        const [headerB64, payloadB64, signatureB64] = jwt.split('.');
+        const decodeB64 = str => JSON.parse(atob(str.replace(/-/g, '+').replace(/_/g, '/')));
+        const decodedHeader = decodeB64(headerB64);
+        const decodedPayload = decodeB64(payloadB64);
+        let result = "Header:\n" + JSON.stringify(decodedHeader, null, 2) + "\n\nPayload:\n" + JSON.stringify(decodedPayload, null, 2);
+
+        if (secret) {
+          const data = headerB64 + "." + payloadB64;
+          const encodeUtf8 = s => unescape(encodeURIComponent(s));
+          const expectedSig = CryptoJS.HmacSHA256(encodeUtf8(data), encodeUtf8(secret)).toString(CryptoJS.enc.Base64)
+            .replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
+          const valid = signatureB64 === expectedSig;
+          result += "\n\nSignature: " + (valid ? "✅ Valid" : "❌ Invalid");
+        }
+
+        output.setValue(result, -1);
+        output.session.setMode("ace/mode/text");
+      } catch {
+        output.setValue("Invalid JWT!", -1);
+      }
+    });
+
+
+    $('#btnBeautifySQL').click(() => {
+      try {
+        const formatted = sqlFormatter.format(input1.getValue());
+        output.setValue(formatted, -1);
+        output.session.setMode("ace/mode/sql");
+      } catch (e) {
+        output.setValue("Error formatting SQL: " + e.message, -1);
+      }
+    });
+
+    $('#btnMinifySQL').click(() => {
+      const minified = input1.getValue().replace(/\s+/g, ' ').trim();
+      output.setValue(minified, -1);
+      output.session.setMode("ace/mode/sql");
+    });
+
+    $('#btnValidateSQL').click(() => {
+      try {
+        sqlFormatter.format(input1.getValue());
+        output.setValue("✅ SQL is valid.", -1);
+      } catch (e) {
+        output.setValue("❌ Invalid SQL: " + e.message, -1);
+      }
+      output.session.setMode("ace/mode/text");
+    });
+
+    $('#btnEscapeSQL').click(() => {
+      const escaped = input1.getValue().replace(/'/g, "\\'");
+      output.setValue(escaped, -1);
+      output.session.setMode("ace/mode/sql");
+    });
+
+    $('#btnSplitSQL').click(() => {
+      const sql = input1.getValue();
+      const split = sql.split(/;\s*/).filter(Boolean).map(q => q.trim() + ";").join("\n\n");
+      output.setValue(split, -1);
+      output.session.setMode("ace/mode/sql");
+    });
+
+
+    $('#btnFixArrayJSON').click(() => {
+      try {
+        let val = input1.getValue();
+        val = val.replace(/([{,\s])(\w+)(\s*:\s*)/g, '$1"$2"$3');
+        const parsed = JSON.parse(val);
+        if (!Array.isArray(parsed)) throw "Not an array";
+        const fixed = JSON.stringify(parsed, null, 2);
+        output.setValue(fixed, -1);
+        output.session.setMode("ace/mode/json");
+      } catch (e) {
+        output.setValue("❌ Cannot fix this JSON: " + e.message, -1);
+      }
+    });
+
+    $('#btnTextToQR')
+      .click(() => {
+        const text = input1.getValue().trim();
+        if (!text) return alert("Please enter text first.");
+        showQRCode(text);
+        output.setValue("✅ QR Code generated below", -1);
+      });
+
+
+    $('#btnUpperCase').click(() => {
+      output.setValue(input1.getValue().toUpperCase(), -1);
+    });
+
+    $('#btnLowerCase').click(() => {
+      output.setValue(input1.getValue().toLowerCase(), -1);
+    });
+
+    $('#btnCapitalizedCase').click(() => {
+      const cap = str => str.replace(/\b\w/g, c => c.toUpperCase());
+      output.setValue(cap(input1.getValue()), -1);
+    });
+
+    $('#btnSentenceCase').click(() => {
+      const sent = str => str.replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+      output.setValue(sent(input1.getValue().toLowerCase()), -1);
+    });
+
+    $('#btnHexToText').click(() => {
+    try {
+      const hex = input1.getValue().replace(/\s+/g, '');
+      let text = '';
+      for (let i = 0; i < hex.length; i += 2) {
+        text += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+      }
+      output.setValue(text, -1);
+    } catch {
+      output.setValue('Invalid Hex!', -1);
+    }
+  });
+
+    $('#btnTextToHex').click(() => {
+      const hex = str => Array.from(str).map(c => c.charCodeAt(0).toString(16)).join(' ');
+      output.setValue(hex(input1.getValue()), -1);
+    });
+
+    $('#btnHexToAscii').click(() => {
+      const ascii = hex => hex.split(' ').map(h => String.fromCharCode(parseInt(h, 16))).join('');
+      output.setValue(ascii(input1.getValue()), -1);
+    });
+
+    $('#btnAsciiToHex').click(() => {
+      const hex = str => Array.from(str).map(c => c.charCodeAt(0).toString(16)).join(' ');
+      output.setValue(hex(input1.getValue()), -1);
+    });
+
+    $('#btnHexToBinary').click(() => {
+      const bin = hex => hex.split(' ').map(h => parseInt(h, 16).toString(2).padStart(8, '0')).join(' ');
+      output.setValue(bin(input1.getValue()), -1);
+    });
+
+    $('#btnBinaryToHex').click(() => {
+      const hex = bin => bin.split(' ').map(b => parseInt(b, 2).toString(16)).join(' ');
+      output.setValue(hex(input1.getValue()), -1);
+    });
+
+    $('#btnHexToDecimal').click(() => {
+      const dec = hex => hex.split(' ').map(h => parseInt(h, 16)).join(' ');
+      output.setValue(dec(input1.getValue()), -1);
+    });
+
+    $('#btnDecimalToHex').click(() => {
+      const hex = dec => dec.split(' ').map(d => parseInt(d, 10).toString(16)).join(' ');
+      output.setValue(hex(input1.getValue()), -1);
+    });
+
+    $('#btnHexToHexaDecimal').click(() => {
+      const result = input1.getValue().toUpperCase();
+      output.setValue(result, -1);
+    });
+
+    $('#btnHexaDecimalToHex').click(() => {
+      const result = input1.getValue().toLowerCase();
+      output.setValue(result, -1);
+    });
+
+    $('#btnCopy').click(() => {
+      const temp = document.createElement("textarea");
+      temp.value = output.getValue();
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      alert("Output copied to clipboard!");
+    });
+
+    $('#btnRemove').click(() => {
+      input1.setValue("");
+      input2.setValue("");
+      output.setValue("");
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <script>
+    let qrCanvas = document.createElement("canvas");
+    qrCanvas.id = "qrCanvas";
+    qrCanvas.style.marginTop = "10px";
+    qrCanvas.style.display = "none";
+    document.getElementById("columnC").appendChild(qrCanvas);
+
+    const qr = new QRious({
+      element: qrCanvas,
+      size: 200,
+      value: ''
+    });
+
+    function showQRCode(text) {
+      qr.value = text;
+      qrCanvas.style.display = "block";
+    }
+
+    function hideQRCode() {
+      qrCanvas.style.display = "none";
+    }
+
+    $(document).ready(function () {
+      hideQRCode();
+    });
+  </script>
+</body>
+
+</html>

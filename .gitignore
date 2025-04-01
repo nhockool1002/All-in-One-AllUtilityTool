@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build output
+dist/
+release/
+build/
+out/
+node_modules/
+win32/
+macos/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Electron specific
+.electron-builder.env
+*.asar
+*.asar.unpacked
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+
+# Temporary files
+tmp/
+temp/ 
